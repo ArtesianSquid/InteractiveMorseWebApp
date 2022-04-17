@@ -4,16 +4,10 @@
 
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
-<style>
-    #quiz_title{
-        font-size: large;
-    }
-</style>
 
 <script>
     $(document).ready(function(){
         // Add correct instruction depending on type of question
-        console.log("hi")
         instructions = document.getElementById("instructions")     
         /* Switch doesnt work for some reason
         switch({{question.question_type}}){
@@ -46,22 +40,24 @@
 </script>
 
 <div id="quiz_title">
-    Quiz!!
+    <h1>Quiz</h1>
     Level: {{question.difficulty}}
+    <br>
+    Question {{question.number}} of 10
 </div>
 
-<div>Question {{question.number}} of 10</div>
-
+<br>
 <div id="instructions">Instructions: </div>
 
+<br>
 <div>Audio: {{question.transcription}}</div>
 
-<form class="form-inline my-2 my-lg-0" id="quiz_answer" action="">
+<form class="form-inline" id="quiz_answer" action="">
     <img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30" onclick="document.getElementById('yourAudioTag').play();">
     <input class="form-control mr-sm-2" type="search" id="searchBox" placeholder="Enter Your Answer Here" aria-label="Search" name="search">
     <button class="btn my-2 my-sm-0" id="searchButton" type="submit">Submit</button>
 </form>
-
+<br>
 <div>
     <button id="Next">Next Question</button><br>
 </div>

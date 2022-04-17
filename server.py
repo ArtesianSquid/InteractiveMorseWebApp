@@ -12,6 +12,7 @@ quiz_questions = {
     "audio_src": "somelink",
     "next_question": "1",
     "question_type" : "0",
+    "answer" : "idk"
     },
     "1" : {"difficulty" : "Easy",
     "number": "2",
@@ -19,6 +20,7 @@ quiz_questions = {
     "audio_src": "somelink",
     "next_question": "2",
     "question_type" : "1",
+    "answer" : "idk"
     },
     "2" : {"difficulty" : "Easy",
     "number": "3",
@@ -26,6 +28,7 @@ quiz_questions = {
     "audio_src": "somelink",
     "next_question": "end",
     "question_type" : "2",
+    "answer" : "idk"
     }
 }
 
