@@ -5,7 +5,21 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
 
-<div>home!!!</div>
+<div id="home-container">
+    <h1>Morse Code</h1>
+    <b>Basic Information</b>
+    <p>Morse code is comprised of two signal units. “Dit”, which is represented by the character ·, and “dah”, which is
+        represented by the character –
+        <br><br>
+        The dit (which is pronounced with a silent “t”) has a short single syllable sound whereas the dah lasts as long
+        as three dits.
+    </p>
+    <span>Dit:<button>play</button> Dah: <button>play</button></span>
+    <p>
+        There should be one dit’s worth of time between the dits and dahs of a single letter, one dah’s worth of time between letters in a word, and seven dit’s worth of time between words in a sentence. 
+    </p>
+    <span>"A":<button>play</button> "CAT": <button>play</button> "OK BYE": <button>play</button></span>
+</div>
 
 
 {% endblock %}
