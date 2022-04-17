@@ -6,9 +6,47 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
 
 <script>
-    $(document).ready(function(){
+    let question = {{ question| tojson}}
+    let score = 0;
+
+    function saveScore() {
+        $.ajax({
+            type: "POST",
+            url: "save_score",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({"score" : score}),
+            success: function (result) {
+                console.log(result);
+            },
+            error: function (request, status, error) {
+                console.log("Error");
+                console.log(request)
+                console.log(status)
+                console.log(error)
+            }
+        });
+
+    }
+
+    function checkAnswer() {
+        if ($("#answer").val() == question.answer) {
+            score++;
+            $("#message").text("CORRECT! Fantastic job")
+        }
+        else {
+            $("#message").text("Incorrect...the right answer is " + question.answer);
+        }
+        $("#submit").prop("disabled", true);
+        if (question.next_question == "end") {
+            saveScore();
+        }
+        console.log(score);
+    }
+
+    $(document).ready(function () {
         // Add correct instruction depending on type of question
-        instructions = document.getElementById("instructions")     
+        instructions = document.getElementById("instructions")
         /* Switch doesnt work for some reason
         switch({{question.question_type}}){
             case "0": 
@@ -23,20 +61,20 @@
             break;
         }
         */
-        if ({{question.question_type}} == "0"){
+        if (question.question_type == "morse_english") {
             instructions.append("Please listen to the following word in morse and type in the correct english translation")
         }
-        if ({{question.question_type}} == "1"){
+        if (question.question_type == "sound_morse") {
             instructions.append("Please listen to the following morse code and type in the correct morse translation. The morse may be of letters you have not learned yet. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
         }
-        if ({{question.question_type}} == "2"){
+        if (question.question_type == "english_morse") {
             instructions.append("Please consider the following English word and type in the correct morse translation. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
         }
 
         document.getElementById("Next").onclick = function () {
             location.href = "/quiz/{{question.next_question}}";
         };
-})
+    })
 </script>
 
 <div id="quiz_title">
@@ -52,15 +90,19 @@
 <br>
 <div>Audio: {{question.transcription}}</div>
 
-<form class="form-inline" id="quiz_answer" action="">
-    <img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30" onclick="document.getElementById('yourAudioTag').play();">
-    <input class="form-control mr-sm-2" type="search" id="searchBox" placeholder="Enter Your Answer Here" aria-label="Search" name="search">
-    <button class="btn my-2 my-sm-0" id="searchButton" type="submit">Submit</button>
-</form>
+<div>
+    <img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40"
+        height="30" onclick="document.getElementById('yourAudioTag').play();">
+    <input id="answer" placeholder="Enter Your Answer Here" aria-label="Search" name="search">
+    <button id="submit" onclick="checkAnswer()">Submit</button>
+</div>
+<br>
+<div id="message"></div>
 <br>
 <div>
     <button id="Next">Next Question</button><br>
 </div>
+
 
 
 

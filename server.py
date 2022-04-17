@@ -11,30 +11,33 @@ quiz_questions = {
     "transcription": "–  ·–   –·",
     "audio_src": "somelink",
     "next_question": "1",
-    "question_type" : "0",
-    "answer" : "idk"
+    "question_type" : "morse_english",
+    "word" : "TAN",
+    "answer" : "TAN"
     },
     "1" : {"difficulty" : "Easy",
     "number": "2",
     "transcription": "--. .. -.",
     "audio_src": "somelink",
     "next_question": "2",
-    "question_type" : "1",
-    "answer" : "idk"
+    "question_type" : "sound_morse",
+    "word" : "DONE",
+    "answer" : "--. .. -."
     },
     "2" : {"difficulty" : "Easy",
     "number": "3",
     "transcription": "-.. --- -. .",
     "audio_src": "somelink",
     "next_question": "end",
-    "question_type" : "2",
-    "answer" : "idk"
+    "question_type" : "english_morse",
+    "word" : "DONE",
+    "answer" : "-.. --- -. ."
     }
 }
 
 quiz_answers = {}
 
-
+score = 0
 
 # ROUTES
 @app.route('/')
@@ -52,10 +55,16 @@ def quiz(id=None):
 
 @app.route('/quiz/end')
 def end():
-    return render_template('end.html') 
+    return render_template('end.html', score=score) 
 
 
 # AJAX FUNCTIONS
+@app.route('/quiz/save_score', methods=['GET', 'POST'])
+def save_score():
+    global score
+    json_data = request.get_json()
+    score = json_data["score"]
+    return jsonify(score=score)
 
 
 if __name__ == '__main__':

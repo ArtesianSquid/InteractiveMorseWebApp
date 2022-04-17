@@ -3,10 +3,18 @@
 {% block content %}
 
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'end.js') }}"></script>
 
-<div>end of quiz</div>
-<div> Your score is:</div>
+<script>
+    let score = {{ score| tojson}}
+    
+    $(document).ready(function () {    
+        $("#score").text("You have finished the Quiz and recieved the following score: " + score + "/3")     
+    });
+
+</script>
+
+<div id="score"> </div>
 
 
 
