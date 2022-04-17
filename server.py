@@ -10,7 +10,7 @@ def home():
 
 @app.route('/learn/<id>')
 def learn(id=None):
-    return render_template('learn.html') 
+    return render_template('learn.html', data={"id": id}) 
 
 @app.route('/quiz/<id>')
 def quiz(id=None):

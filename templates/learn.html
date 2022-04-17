@@ -3,9 +3,15 @@
 {% block content %}
 
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
 
-<div>learning!!!</div>
+<script>
+    let data = {{ data| tojson}} 
+</script>
+
+<div id="learn-container">
+    <div>learning!!!!</div>
+</div>
 
 
 {% endblock %}
