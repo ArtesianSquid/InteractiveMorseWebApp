@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+
+<script>
+    let data = {{ data| tojson}} 
+</script>
+
+<div id="add-container">
+<form id="add-form" action="javascript:void(0);">
+    <div>Company name: <input id="name" required> </div>
+    <div>Date Founded: <input id="founded" required> </div>
+    <div>Link to logo: <input id="logo" required> </div>
+    <div>Description: <input id="description" required> </div>
+    <div>Locations: <div class="caption">(Separate with a comma if multiple)</div><input id="locations" required> </div>
+    <button id="add-button">Add</button>
+</form>
+</div>
+
+
+
+
+{% endblock %}
