@@ -3,9 +3,71 @@
 {% block content %}
 
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+<style>
+    #quiz_title{
+        font-size: large;
+    }
+</style>
 
-<div>quiz!!!</div>
+<script>
+    $(document).ready(function(){
+        // Add correct instruction depending on type of question
+        console.log("hi")
+        instructions = document.getElementById("instructions")     
+        /* Switch doesnt work for some reason
+        switch({{question.question_type}}){
+            case "0": 
+                instructions.append("Please listen to the following word in morse and type in the correct english translation");
+                break;
+            case "1": 
+                instructions.append("1")
+                break;
+            case "2": 
+                instructions.append("2")
+                break;  
+            break;
+        }
+        */
+        if ({{question.question_type}} == "0"){
+            instructions.append("Please listen to the following word in morse and type in the correct english translation")
+        }
+        if ({{question.question_type}} == "1"){
+            instructions.append("Please listen to the following morse code and type in the correct morse translation. The morse may be of letters you have not learned yet. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
+        }
+        if ({{question.question_type}} == "2"){
+            instructions.append("Please consider the following English word and type in the correct morse translation. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
+        }
+    })
+    
+
+</script>
+
+<div id="quiz_title">
+    Quiz!!
+    Level: {{question.difficulty}}
+</div>
+
+<div>Question {{question.number}} of 10</div>
+
+<div id="instructions">Instructions: </div>
+
+<div>Audio: {{question.transcription}}</div>
+
+<form class="form-inline my-2 my-lg-0" id="quiz_answer" action="/search_results">
+    <img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30" onclick="document.getElementById('yourAudioTag').play();">
+    <input class="form-control mr-sm-2" type="search" id="searchBox" placeholder="Enter Your Answer Here" aria-label="Search" name="search">
+    <button class="btn my-2 my-sm-0" id="searchButton" type="submit">Submit</button>
+</form>
+
+<div>
+    <button id="Next">Next Question</button><br>
+</div>
+
+
+
+
+
 
 
 {% endblock %}
