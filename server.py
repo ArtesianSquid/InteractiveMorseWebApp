@@ -11,6 +11,20 @@ quiz_questions = {
     "transcription": "–  ·–   –·",
     "audio_src": "somelink",
     "next_question": "1",
+    "question_type" : "0",
+    },
+    "1" : {"difficulty" : "Easy",
+    "number": "2",
+    "transcription": "--. .. -.",
+    "audio_src": "somelink",
+    "next_question": "2",
+    "question_type" : "1",
+    },
+    "2" : {"difficulty" : "Easy",
+    "number": "3",
+    "transcription": "-.. --- -. .",
+    "audio_src": "somelink",
+    "next_question": "end",
     "question_type" : "2",
     }
 }
@@ -33,7 +47,7 @@ def quiz(id=None):
     question = quiz_questions[id]
     return render_template('quiz.html', question=question) 
 
-@app.route('/end')
+@app.route('/quiz/end')
 def end():
     return render_template('end.html') 
 

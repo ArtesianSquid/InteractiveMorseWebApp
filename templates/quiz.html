@@ -38,9 +38,11 @@
         if ({{question.question_type}} == "2"){
             instructions.append("Please consider the following English word and type in the correct morse translation. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
         }
-    })
-    
 
+        document.getElementById("Next").onclick = function () {
+            location.href = "/quiz/{{question.next_question}}";
+        };
+})
 </script>
 
 <div id="quiz_title">
@@ -54,7 +56,7 @@
 
 <div>Audio: {{question.transcription}}</div>
 
-<form class="form-inline my-2 my-lg-0" id="quiz_answer" action="/search_results">
+<form class="form-inline my-2 my-lg-0" id="quiz_answer" action="">
     <img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30" onclick="document.getElementById('yourAudioTag').play();">
     <input class="form-control mr-sm-2" type="search" id="searchBox" placeholder="Enter Your Answer Here" aria-label="Search" name="search">
     <button class="btn my-2 my-sm-0" id="searchButton" type="submit">Submit</button>
