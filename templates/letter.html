@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let data = {{ data| tojson}} 
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'letter.js') }}"></script>
+
+<div class="container">
+    <div class="row txtheader">
+        <h1>Choose a Letter!</h1>
+    </div>
+    <div class="row txtcontent">
+        Bolded characters are what the easy quiz will cover. The medium level quiz will cover them all.
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href='/learn/{{data["1"].id}}'>
+                        <div class="bold">{{data["1"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["2"].id}}'>
+                        <div>{{data["2"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["3"].id}}'>
+                        <div>{{data["3"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["4"].id}}'>
+                        <div class="bold">{{data["4"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["5"].id}}'>
+                        <div class="bold">{{data["5"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["6"].id}}'>
+                        <div>{{data["6"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["7"].id}}'>
+                        <div>{{data["7"].letter}}</div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="txtpad bold">{{data["1"].morse}}</div>
+                    <div class="txtpad">{{data["2"].morse}}</div>
+                    <div class="txtpad">{{data["3"].morse}}</div>
+                    <div class="txtpad bold">{{data["4"].morse}}</div>
+                    <div class="txtpad bold">{{data["5"].morse}}</div>
+                    <div class="txtpad">{{data["6"].morse}}</div>
+                    <div class="txtpad">{{data["7"].morse}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href='/learn/{{data["8"].id}}'>
+                        <div class="bold">{{data["8"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["9"].id}}'>
+                        <div class="bold">{{data["9"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["10"].id}}'>
+                        <div>{{data["10"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["11"].id}}'>
+                        <div>{{data["11"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["12"].id}}'>
+                        <div class="bold">{{data["12"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["13"].id}}'>
+                        <div>{{data["13"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["14"].id}}'>
+                        <div class="bold">{{data["14"].letter}}</div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="txtpad bold">{{data["8"].morse}}</div>
+                    <div class="txtpad bold">{{data["9"].morse}}</div>
+                    <div class="txtpad">{{data["10"].morse}}</div>
+                    <div class="txtpad">{{data["11"].morse}}</div>
+                    <div class="txtpad bold">{{data["12"].morse}}</div>
+                    <div class="txtpad">{{data["13"].morse}}</div>
+                    <div class="txtpad bold">{{data["14"].morse}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href='/learn/{{data["15"].id}}'>
+                        <div class="bold">{{data["15"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["16"].id}}'>
+                        <div>{{data["16"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["17"].id}}'>
+                        <div>{{data["17"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["18"].id}}'>
+                        <div class="bold">{{data["18"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["19"].id}}'>
+                        <div class="bold">{{data["19"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["20"].id}}'>
+                        <div class="bold">{{data["20"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["21"].id}}'>
+                        <div>{{data["21"].letter}}</div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="txtpad bold">{{data["15"].morse}}</div>
+                    <div class="txtpad">{{data["16"].morse}}</div>
+                    <div class="txtpad">{{data["17"].morse}}</div>
+                    <div class="txtpad bold">{{data["18"].morse}}</div>
+                    <div class="txtpad bold">{{data["19"].morse}}</div>
+                    <div class="txtpad bold">{{data["20"].morse}}</div>
+                    <div class="txtpad">{{data["21"].morse}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href='/learn/{{data["22"].id}}'>
+                        <div>{{data["22"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["23"].id}}'>
+                        <div>{{data["23"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["24"].id}}'>
+                        <div>{{data["24"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["25"].id}}'>
+                        <div>{{data["25"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["26"].id}}'>
+                        <div>{{data["26"].letter}}</div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="txtpad">{{data["22"].morse}}</div>
+                    <div class="txtpad">{{data["23"].morse}}</div>
+                    <div class="txtpad">{{data["24"].morse}}</div>
+                    <div class="txtpad">{{data["25"].morse}}</div>
+                    <div class="txtpad">{{data["26"].morse}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="nums">Numbers and Punctuation</button>
+</div>
+
+{% endblock %}
