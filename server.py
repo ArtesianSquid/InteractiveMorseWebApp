@@ -5,6 +5,181 @@ app = Flask(__name__)
 
 # DATA
 
+alphabet = {
+    "1": {
+        "id": "1",
+        "letter": "A",
+        "morse": "· –",
+        "word1": "BAT",
+        "morse1": "–···  ·–    –",
+        "word2": "ANT",
+        "morse2": "·–  –·  –",
+        "word3": "CANDY",
+        "morse3": "–·–·   ·–   –·  –·· –·– –",
+        "next_lesson": "4"
+    },
+    "2": {
+        "id": "2",
+        "letter": "B",
+        "morse": "– · · ·"
+    },
+    "3": {
+        "id": "3",
+        "letter": "C",
+        "morse": "– · – ·"
+    },
+    "4": {
+        "id": "4",
+        "letter": "D",
+        "morse": "– · ·",
+        "word1": "LAD",
+        "morse1": "·–··  ·–  –··",
+        "word2": "OLD",
+        "morse2": "– – –  ·–··  –··",
+        "word3": "FRIED",
+        "morse3": "··–·  ·–·  ··  ·  –··",
+        "next_lesson": "5"
+    },
+    "5": {
+        "id": "5",
+        "letter": "E",
+        "morse": "·",
+        "word1": "ALE",
+        "morse1": "·–  ·–··  ·",
+        "word2": "EEL",
+        "morse2": "·  ·  ·–··",
+        "word3": "ANGER",
+        "morse3": "·–  –·  – –·  ·  ·–·",
+        "next_lesson": "8"
+    },
+    "6": {
+        "id": "6",
+        "letter": "F",
+        "morse": "· · – ·"
+    },
+    "7": {
+        "id": "7",
+        "letter": "G",
+        "morse": "– – ·"
+    },
+    "8": {
+        "id": "8",
+        "letter": "H",
+        "morse": "····",
+        "word1": "HUG",
+        "morse1": "····  ··–  – –·",
+        "word2": "THE",
+        "morse2": "–  ····  ·",
+        "word3": "TRASH",
+        "morse3": "–  ·–·  ·–  ···  ····",
+        "next_lesson": "9" 
+    },
+    "9": {
+        "id": "9",
+        "letter": "I",
+        "morse": "··",
+        "word1": "FIG",
+        "morse1": "··–·  ··  – –·",
+        "word2": "IKE",
+        "morse2": "··  –·–  ·",
+        "word3": "SLICE",
+        "morse3": "···  ·–··  ··  –·–·  ·",
+        "next_lesson": "14"
+    },
+    "10": {
+        "id": "10",
+        "letter": "J",
+        "morse": "· – – –"
+    },
+    "11": {
+        "id": "11",
+        "letter": "K",
+        "morse": "– · – ·"
+    },
+    "12": {
+        "id": "12",
+        "letter": "L",
+        "morse": "· – · ·"
+    },
+    "13": {
+        "id": "13",
+        "letter": "M",
+        "morse": "– –"
+    },
+    "14": {
+        "id": "14",
+        "letter": "N",
+        "morse": "– ·",
+        "word1": "PIN",
+        "morse1": "·– –·  ··  –·",
+        "word2": "ONE",
+        "morse2": "– – –  –·  ·",
+        "word3": "PRANK",
+        "morse3": "·– –·  ·–·  ·–  –·  –·–",
+        "next_lesson": "end"
+    },
+    "15": {
+        "id": "15",
+        "letter": "O",
+        "morse": "0"
+    },
+    "16": {
+        "id": "16",
+        "letter": "P",
+        "morse": "0"
+    },
+    "17": {
+        "id": "17",
+        "letter": "Q",
+        "morse": "0"
+    },
+    "18": {
+        "id": "18",
+        "letter": "R",
+        "morse": "0"
+    },
+    "19": {
+        "id": "19",
+        "letter": "S",
+        "morse": "0"
+    },
+    "20": {
+        "id": "20",
+        "letter": "T",
+        "morse": "0"
+    },
+    "21": {
+        "id": "21",
+        "letter": "U",
+        "morse": "0"
+    },
+    "22": {
+        "id": "22",
+        "letter": "V",
+        "morse": "0"
+    },
+    "23": {
+        "id": "23",
+        "letter": "W",
+        "morse": "0"
+    },
+    "24": {
+        "id": "24",
+        "letter": "X",
+        "morse": "0"
+    },
+    "25": {
+        "id": "25",
+        "letter": "Y",
+        "morse": "0"
+    },
+    "26": {
+        "id": "26",
+        "letter": "Z",
+        "morse": "0"
+    }
+} 
+
 quiz_questions = {
     "0" : {"difficulty" : "Easy",
     "number": "1",
@@ -46,17 +221,19 @@ def home():
 
 @app.route('/learn')
 def letters():
-    global letters
-    return render_template('letter.html', data=letters)
+    global alphabet
+    return render_template('letter.html', data=alphabet)
 
 @app.route('/learn/numbers')
 def numbers():
-    global numbers
-    return render_template('numbers.html', data=numbers)
+    # alpahbet will be replaced by the dictionary for nums later
+    global nums
+    nums = alphabet
+    return render_template('numbers.html', data=nums)
 
 @app.route('/learn/<id>')
 def learn(id=None):
-    letter = data[id]
+    letter = alphabet[id]
     return render_template('learn.html', data=letter) 
 
 @app.route('/quiz/<id>')
