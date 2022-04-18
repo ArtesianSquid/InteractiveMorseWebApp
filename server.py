@@ -66,6 +66,18 @@ def save_score():
     score = json_data["score"]
     return jsonify(score=score)
 
+@app.route('/quiz/check_answer', methods=['GET', 'POST'])
+def check_answer():
+    global score
+    json_data = request.get_json()
+    ans = json_data["answer"]
+    qid = json_data["question_id"]
+    correct = 0
+    if(ans == quiz_questions[str(qid)]["answer"]):
+        correct = 1
+    score += correct
+    return jsonify(correct=correct)
+
 
 if __name__ == '__main__':
    app.run(debug = True)

@@ -7,17 +7,21 @@
 
 <script>
     let question = {{ question| tojson}}
-    let score = 0;
 
-    function saveScore() {
+    function checkAnswer() {
         $.ajax({
             type: "POST",
-            url: "save_score",
+            url: "check_answer",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({"score" : score}),
+            data: JSON.stringify({"answer" : $("#answer").val(), "question_id" : question.number-1}),
             success: function (result) {
                 console.log(result);
+                $("#submit").prop("disabled", true);
+                if(result["correct"])
+                    $("#message").text("CORRECT! Fantastic job");
+                else
+                    $("#message").text("Incorrect...the right answer is " + question.answer);
             },
             error: function (request, status, error) {
                 console.log("Error");
@@ -27,21 +31,6 @@
             }
         });
 
-    }
-
-    function checkAnswer() {
-        if ($("#answer").val() == question.answer) {
-            score++;
-            $("#message").text("CORRECT! Fantastic job")
-        }
-        else {
-            $("#message").text("Incorrect...the right answer is " + question.answer);
-        }
-        $("#submit").prop("disabled", true);
-        if (question.next_question == "end") {
-            saveScore();
-        }
-        console.log(score);
     }
 
     $(document).ready(function () {
@@ -62,7 +51,6 @@
             break;
         }
         */
-        console.log("{{question.word}}")
         if (question.question_type == "morse_english") {
             instructions.append("Please listen to the following word in morse and type in the correct english translation")
             let play = $('<img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30">')
