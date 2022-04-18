@@ -3,6 +3,7 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
+<<<<<<< HEAD
 # DATA
 
 quiz_questions = {
@@ -38,15 +39,28 @@ quiz_questions = {
 quiz_answers = {}
 
 score = 0
+=======
+>>>>>>> 00a75ed (Added routes for numbers and letters page)
 
 # ROUTES
 @app.route('/')
 def home():
     return render_template('home.html')  
 
+@app.route('/learn')
+def letters():
+    global letter
+    return render_template('letter.html', data=letter)
+
+@app.route('/learn/numbers')
+def numbers():
+    global letter
+    return render_template('numbers.html', data=letter)
+
 @app.route('/learn/<id>')
 def learn(id=None):
-    return render_template('learn.html', data={"id": id}) 
+    datum = data[id]
+    return render_template('learn.html', data=datum) 
 
 @app.route('/quiz/<id>')
 def quiz(id=None):
