@@ -3,16 +3,18 @@
   	width: 50px;
   	text-align: center;
   	font-size: 30px;
+	overflow: hidden;
+	white-space: nowrap;
 }
 a, a:hover, a:focus, a:active {
       text-decoration: none;
       color: inherit;
  }
 .txtheader {
-	margin-left: 400px;
+	text-align: center;
 }
 .txtcontent {
-	margin-left: 200px;
+	text-align: center;
 	padding-bottom: 40px;
 }
 .txtpad {
@@ -45,22 +47,10 @@ a, a:hover, a:focus, a:active {
 	float: left;
 	margin-top: 30px;
 }
-.nums {
-	padding-left: 350px;
-}
-.numRight {
-	padding-left: 175px;
-}
-.numMorse {
-	margin-left: -50px;
-}
-.numLeftMorse {
-	margin-left: 125px;
-}
 .numHeader {
-	margin-left: 325px;
+	text-align: center;
 }
 .numcontent {
-	margin-left: 325px;
+	text-align: center;
 	padding-bottom: 40px;
 }

@@ -10,10 +10,14 @@
 
 <div class="container">
     <div class="row txtheader">
-        <h1>Choose a Letter!</h1>
+        <div class="col-md-12">
+            <h1>Choose a Letter!</h1>
+        </div>
     </div>
     <div class="row txtcontent">
-        Bolded characters are what the easy quiz will cover. The medium level quiz will cover them all.
+        <div class="col-md-12">
+            Bolded characters are what the easy quiz will cover. The medium level quiz will cover them all.
+        </div>
     </div>
     <div class="row">
         <div class="col-md-3">
@@ -68,7 +72,7 @@
                         <div>{{data["11"].letter}}</div>
                     </a>
                     <a href='/learn/{{data["12"].id}}'>
-                        <div class="bold">{{data["12"].letter}}</div>
+                        <div>{{data["12"].letter}}</div>
                     </a>
                     <a href='/learn/{{data["13"].id}}'>
                         <div>{{data["13"].letter}}</div>
@@ -82,7 +86,7 @@
                     <div class="txtpad bold">{{data["9"].morse}}</div>
                     <div class="txtpad">{{data["10"].morse}}</div>
                     <div class="txtpad">{{data["11"].morse}}</div>
-                    <div class="txtpad bold">{{data["12"].morse}}</div>
+                    <div class="txtpad">{{data["12"].morse}}</div>
                     <div class="txtpad">{{data["13"].morse}}</div>
                     <div class="txtpad bold">{{data["14"].morse}}</div>
                 </div>

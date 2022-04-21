@@ -65,7 +65,7 @@ alphabet = {
     "8": {
         "id": "8",
         "letter": "H",
-        "morse": "····",
+        "morse": "· · · ·",
         "word1": "HUG",
         "morse1": "····  ··–  – –·",
         "word2": "THE",
@@ -77,7 +77,7 @@ alphabet = {
     "9": {
         "id": "9",
         "letter": "I",
-        "morse": "··",
+        "morse": "· ·",
         "word1": "FIG",
         "morse1": "··–·  ··  – –·",
         "word2": "IKE",
@@ -116,69 +116,171 @@ alphabet = {
         "morse2": "– – –  –·  ·",
         "word3": "PRANK",
         "morse3": "·– –·  ·–·  ·–  –·  –·–",
-        "next_lesson": "end"
+        "next_lesson": "15"
     },
     "15": {
         "id": "15",
         "letter": "O",
-        "morse": "0"
+        "morse": "– – –",
+        "word1": "DOG",
+        "morse1": "–··  – – –  – –·",
+        "word2": "COP",
+        "morse2": "–·–·  – – –  ·– –·",
+        "word3": "FLOOR",
+        "morse3": "··–·  ·–··  – – –  – – –  ·–·",
+        "next_lesson": "18"
     },
     "16": {
         "id": "16",
         "letter": "P",
-        "morse": "0"
+        "morse": "· – – ·"
     },
     "17": {
         "id": "17",
         "letter": "Q",
-        "morse": "0"
+        "morse": "– – · –"
     },
     "18": {
         "id": "18",
         "letter": "R",
-        "morse": "0"
+        "morse": "· – ·",
+        "word1": "RAW",
+        "morse1": "·–·  ·–  ·– –",
+        "word2": "BAR",
+        "morse2": "-···  ·–  ·–·",
+        "word3": "HERO",
+        "morse3": "····  ·  ·–·  – – –",
+        "next_lesson": "19"
     },
     "19": {
         "id": "19",
         "letter": "S",
-        "morse": "0"
+        "morse": "· · ·",
+        "word1": "USE",
+        "morse1": "··–  ···  ·",
+        "word2": "ASH",
+        "morse2": "·-  ···  ····",
+        "word3": "OASIS",
+        "morse3": "·– – –  ·– ···  ··  ···",
+        "next_lesson": "20"
     },
     "20": {
         "id": "20",
         "letter": "T",
-        "morse": "0"
+        "morse": "–",
+        "word1": "EAT",
+        "morse1": "·  ·–  –",
+        "word2": "TAP",
+        "morse2": "–  ·–  ·– –·",
+        "word3": "DATE",
+        "morse3": "–··  ·–  –  ·",
+        "next_lesson": "end"
     },
     "21": {
         "id": "21",
         "letter": "U",
-        "morse": "0"
+        "morse": "· · –"
     },
     "22": {
         "id": "22",
         "letter": "V",
-        "morse": "0"
+        "morse": "· · · –"
     },
     "23": {
         "id": "23",
         "letter": "W",
-        "morse": "0"
+        "morse": "· – –"
     },
     "24": {
         "id": "24",
         "letter": "X",
-        "morse": "0"
+        "morse": "– · · –"
     },
     "25": {
         "id": "25",
         "letter": "Y",
-        "morse": "0"
+        "morse": "– · – –"
     },
     "26": {
         "id": "26",
         "letter": "Z",
-        "morse": "0"
+        "morse": "– – · ·"
     }
-} 
+}
+
+nums = {
+    "1": {
+        "id": "1",
+        "char": "1",
+        "morse": "· – – – –"
+    },
+    "2": {
+        "id": "2",
+        "char": "2",
+        "morse": "· · – – –"
+    },
+    "3": {
+        "id": "3",
+        "char": "3",
+        "morse": "· · · – –"
+    },
+    "4": {
+        "id": "4",
+        "char": "4",
+        "morse": "· · · · –"
+    },
+    "5": {
+        "id": "5",
+        "char": "5",
+        "morse": "· · · · ·"
+    },
+    "6": {
+        "id": "6",
+        "char": "6",
+        "morse": "– · · · ·"
+    },
+    "7": {
+        "id": "7",
+        "char": "7",
+        "morse": "– – · · ·"
+    },
+    "8": {
+        "id": "8",
+        "char": "8",
+        "morse": "– – – · ·"
+    },
+    "9": {
+        "id": "9",
+        "char": "9",
+        "morse": "– – – – ·"
+    },
+    "10": {
+        "id": "10",
+        "char": "0",
+        "morse": "– – – – –"
+    },
+    "11": {
+        "id": "11",
+        "char": ".",
+        "morse": "· – · – · –"
+    },
+    "12": {
+        "id": "12",
+        "char": ",",
+        "morse": "– - · · – –"
+    },
+    "13": {
+        "id": "13",
+        "char": "?",
+        "morse": "· · – – · ·"
+    },
+    "14": {
+        "id": "14",
+        "char": "/",
+        "morse": "– · · – ·"
+    }
+}
+
 
 quiz_questions = {
     "0" : {"difficulty" : "Easy",
@@ -228,7 +330,6 @@ def letters():
 def numbers():
     # alpahbet will be replaced by the dictionary for nums later
     global nums
-    nums = alphabet
     return render_template('numbers.html', data=nums)
 
 @app.route('/learn/<id>')

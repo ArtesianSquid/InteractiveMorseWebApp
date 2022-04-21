@@ -9,22 +9,27 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'numbers.js') }}"></script>
 <div class="container">
     <div class="row numHeader">
-        <h1>Numbers and Punctuation</h1>
+        <div class="col-md-12">
+            <h1>Numbers and Punctuation</h1>
+        </div>
     </div>
     <div class="row numcontent">
-        The easy and medium level quizzes will not cover these characters
+        <div class="col-md-12">
+            The easy and medium level quizzes will not cover these characters
+        </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="nums">{{data["1"].character}}</div>
-                    <div class="nums">{{data["2"].character}}</div>
-                    <div class="nums">{{data["3"].character}}</div>
-                    <div class="nums">{{data["4"].character}}</div>
-                    <div class="nums">{{data["5"].character}}</div>
-                    <div class="nums">{{data["6"].character}}</div>
-                    <div class="nums">{{data["7"].character}}</div>
+                    <div class="nums">{{data["1"].char}}</div>
+                    <div class="nums">{{data["2"].char}}</div>
+                    <div class="nums">{{data["3"].char}}</div>
+                    <div class="nums">{{data["4"].char}}</div>
+                    <div class="nums">{{data["5"].char}}</div>
+                    <div class="nums">{{data["6"].char}}</div>
+                    <div class="nums">{{data["7"].char}}</div>
                 </div>
                 <div class="col-md-6">
                     <div class="numLeftMorse">{{data["1"].morse}}</div>
@@ -37,16 +42,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="numRight">{{data["8"].character}}</div>
-                    <div class="numRight">{{data["9"].character}}</div>
-                    <div class="numRight">{{data["10"].character}}</div>
-                    <div class="numRight">{{data["11"].character}}</div>
-                    <div class="numRight">{{data["12"].character}}</div>
-                    <div class="numRight">{{data["13"].character}}</div>
-                    <div class="numRight">{{data["14"].character}}</div>
+                    <div class="numRight">{{data["8"].char}}</div>
+                    <div class="numRight">{{data["9"].char}}</div>
+                    <div class="numRight">{{data["10"].char}}</div>
+                    <div class="numRight">{{data["11"].char}}</div>
+                    <div class="numRight">{{data["12"].char}}</div>
+                    <div class="numRight">{{data["13"].char}}</div>
+                    <div class="numRight">{{data["14"].char}}</div>
                 </div>
                 <div class="col-md-6">
                     <div class="numMorse">{{data["8"].morse}}</div>
@@ -59,6 +65,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
     <button id="letters">Letters</button>
 </div>
