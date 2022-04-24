@@ -70,6 +70,10 @@
         document.getElementById("Next").onclick = function () {
             location.href = "/quiz/{{question.next_question}}";
         };
+
+        document.getElementById("Prev").onclick = function () {
+            location.href = "/quiz/{{question.prev_question}}";
+        };
     })
 </script>
 
@@ -94,6 +98,9 @@
 <br>
 <div id="message"></div>
 <br>
+<div>
+    <button id="Prev">Previous Question</button><br>
+</div>
 <div>
     <button id="Next">Next Question</button><br>
 </div>

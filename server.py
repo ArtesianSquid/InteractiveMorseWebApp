@@ -288,6 +288,7 @@ quiz_questions = {
     "transcription": "–  ·–   –·",
     "audio_src": "somelink",
     "next_question": "1",
+    "prev_question": "null",
     "question_type" : "morse_english",
     "word" : "TAN",
     "answer" : "TAN"
@@ -297,6 +298,7 @@ quiz_questions = {
     "transcription": "--. .. -.",
     "audio_src": "somelink",
     "next_question": "2",
+    "prev_question": "0",
     "question_type" : "sound_morse",
     "word" : "DONE",
     "answer" : "--. .. -."
@@ -306,6 +308,7 @@ quiz_questions = {
     "transcription": "-.. --- -. .",
     "audio_src": "somelink",
     "next_question": "end",
+    "prev_question": "1",
     "question_type" : "english_morse",
     "word" : "DONE",
     "answer" : "-.. --- -. ."
