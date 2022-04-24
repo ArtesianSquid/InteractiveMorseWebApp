@@ -72,7 +72,14 @@
         };
 
         document.getElementById("Prev").onclick = function () {
-            location.href = "/quiz/{{question.prev_question}}";
+            if (question.prev_question == "-1"){
+                location.href = "/quiz_home"
+            }
+            else{
+                location.href = "/quiz/{{question.prev_question}}";
+            }
+            
+
         };
     })
 </script>

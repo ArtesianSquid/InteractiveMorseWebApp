@@ -288,7 +288,7 @@ quiz_questions = {
     "transcription": "–  ·–   –·",
     "audio_src": "somelink",
     "next_question": "1",
-    "prev_question": "null",
+    "prev_question": "-1",
     "question_type" : "morse_english",
     "word" : "TAN",
     "answer" : "TAN",
