@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div id="quiz_title">
+    <h1>Quiz</h1>   
+</div>
+
+<div id="difficulty_select"></div>
+    <label for="difficulty">Select a Difficulty from the drop-down below</label>
+    <select name="difficulty" id="difficulty" onchange="location = this.value">
+        <option disabled selected value> -- select an option -- </option>
+        <!–– probably shouldn't hardcode the quiz values in case we want to change them up later––>
+        <option value="quiz/0">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select>
+</div>
+
+
+
+{% endblock %}

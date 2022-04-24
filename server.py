@@ -291,7 +291,7 @@ quiz_questions = {
     "prev_question": "null",
     "question_type" : "morse_english",
     "word" : "TAN",
-    "answer" : "TAN"
+    "answer" : "TAN",
     },
     "1" : {"difficulty" : "Easy",
     "number": "2",
@@ -348,6 +348,10 @@ def quiz(id=None):
 @app.route('/quiz/end')
 def end():
     return render_template('end.html', score=score) 
+
+@app.route('/quiz_home')
+def quiz_home():
+    return render_template('quiz_home.html') 
 
 
 # AJAX FUNCTIONS
