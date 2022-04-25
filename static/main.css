@@ -23,12 +23,18 @@ a, a:hover, a:focus, a:active {
 .bold {
 	font-weight: bold;
 }
-.wordPad {
-	padding-left: 450px;
+.audio {
+	margin-left: 400px;
 	font-size: 20px;
 	padding-top: 20px;
 }
-.symbPad {
+.wordPad {
+	margin-left: -20px;
+	font-size: 20px;
+	padding-top: 20px;
+}
+.symb {
+	margin-left: -450px;
 	font-size: 20px;
 	padding-top: 20px;
 }

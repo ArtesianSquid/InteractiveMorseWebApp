@@ -8,3 +8,8 @@ $(document).ready(function() {
         }
     })
 })
+function play()
+{
+    let audio = new Audio('./static/audio'+data["audio"]);
+    audio.play();
+}
