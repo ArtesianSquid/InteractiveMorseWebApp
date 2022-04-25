@@ -6,7 +6,8 @@ function displayItems(data){
         $("#popular_container").append(new_name)
     })
 }
-$(document).ready(function(){
-    //when the page loads, display all the names
-    displayItems(data)                        
-})
+function play(name)
+{
+    let audio = new Audio('../static/audio/'+name+".wav");
+    audio.play();
+}
