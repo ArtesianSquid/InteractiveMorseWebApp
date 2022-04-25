@@ -60,3 +60,10 @@ a, a:hover, a:focus, a:active {
 	text-align: center;
 	padding-bottom: 40px;
 }
+.button-solid {
+    border: none;
+}
+button-solid:focus {
+    border: none;
+    outline: none;
+}

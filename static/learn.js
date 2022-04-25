@@ -10,6 +10,21 @@ $(document).ready(function() {
 })
 function play()
 {
-    let audio = new Audio('./static/audio'+data["audio"]);
+    let audio = new Audio('../static/audio/'+data["letter"]+".wav");
+    audio.play();
+}
+function play1()
+{
+    let audio = new Audio('../static/audio/'+data["word1"]+".wav");
+    audio.play();
+}
+function play2()
+{
+    let audio = new Audio('../static/audio/'+data["word2"]+".wav");
+    audio.play();
+}
+function play3()
+{
+    let audio = new Audio('../static/audio/'+data["word3"]+".wav");
     audio.play();
 }
