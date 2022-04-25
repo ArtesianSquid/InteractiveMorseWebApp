@@ -158,6 +158,17 @@
         </div>
     </div>
     <button id="nums">Numbers and Punctuation</button>
+    <br>
+    <div id="learningDropDown">
+        <label for="difficulty">Select a Filter from the drop-down</label>
+        <select name="difficulty" id="difficulty" onchange="location = this.value">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="learn">All Letters</option>
+            <option value="learn_easy">Easy Letters</option>
+            <option value="not_implemented">Medium Letters</option>
+            <option value="not_implemented">Hard Letters</option>
+        </select>
+    </div>
 </div>
 
 {% endblock %}

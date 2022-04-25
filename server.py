@@ -345,6 +345,11 @@ def letters():
     global alphabet
     return render_template('letter.html', data=alphabet)
 
+@app.route('/learn_easy')
+def easyLetters():
+    global alphabet
+    return render_template('letter_easy.html', data=alphabet)
+
 @app.route('/learn/numbers')
 def numbers():
     # alpahbet will be replaced by the dictionary for nums later

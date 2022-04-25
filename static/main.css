@@ -54,3 +54,7 @@ a, a:hover, a:focus, a:active {
 	text-align: center;
 	padding-bottom: 40px;
 }
+
+#learningDropDown {
+	margin: 10px;
+}

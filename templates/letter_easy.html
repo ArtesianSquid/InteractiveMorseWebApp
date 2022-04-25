@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let data = {{ data| tojson}} 
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'letter.js') }}"></script>
+
+<div class="container">
+    <div class="row txtheader">
+        <div class="col-md-12">
+            <h1>Choose a Letter!</h1>
+        </div>
+    </div>
+    <div class="row txtcontent">
+        <div class="col-md-12">
+            These are all of the letters the easy quiz will cover!
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href='/learn/{{data["1"].id}}'>
+                        <div>{{data["1"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["4"].id}}'>
+                        <div>{{data["4"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["5"].id}}'>
+                        <div>{{data["5"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["8"].id}}'>
+                        <div>{{data["8"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["9"].id}}'>
+                        <div>{{data["9"].letter}}</div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="txtpad">{{data["1"].morse}}</div>
+                    <div class="txtpad">{{data["4"].morse}}</div>
+                    <div class="txtpad">{{data["5"].morse}}</div>
+                    <div class="txtpad">{{data["8"].morse}}</div>
+                    <div class="txtpad">{{data["9"].morse}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href='/learn/{{data["14"].id}}'>
+                        <div>{{data["14"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["15"].id}}'>
+                        <div>{{data["15"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["18"].id}}'>
+                        <div>{{data["18"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["19"].id}}'>
+                        <div>{{data["19"].letter}}</div>
+                    </a>
+                    <a href='/learn/{{data["20"].id}}'>
+                        <div>{{data["20"].letter}}</div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="txtpad">{{data["14"].morse}}</div>
+                    <div class="txtpad">{{data["15"].morse}}</div>
+                    <div class="txtpad">{{data["18"].morse}}</div>
+                    <div class="txtpad">{{data["19"].morse}}</div>
+                    <div class="txtpad">{{data["20"].morse}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br>
+    <div id="learningDropDown">
+        <label for="difficulty">Select a Filter from the drop-down</label>
+        <select name="difficulty" id="difficulty" onchange="location = this.value">
+            <option disabled selected value> -- select an option -- </option>
+            <option value="learn">All Letters</option>
+            <option value="learn_easy">Easy Letters</option>
+            <option value="not_implemented">Medium Letters</option>
+            <option value="not_implemented">Hard Letters</option>
+        </select>
+    </div>
+</div>
+
+{% endblock %}
