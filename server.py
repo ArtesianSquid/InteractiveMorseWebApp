@@ -21,12 +21,14 @@ alphabet = {
     "2": {
         "id": "2",
         "letter": "B",
-        "morse": "– · · ·"
+        "morse": "– · · ·",
+        "next_lesson": "4"
     },
     "3": {
         "id": "3",
         "letter": "C",
-        "morse": "– · – ·"
+        "morse": "– · – ·",
+        "next_lesson": "4"
     },
     "4": {
         "id": "4",
@@ -55,12 +57,14 @@ alphabet = {
     "6": {
         "id": "6",
         "letter": "F",
-        "morse": "· · – ·"
+        "morse": "· · – ·",
+        "next_lesson": "8"
     },
     "7": {
         "id": "7",
         "letter": "G",
-        "morse": "– – ·"
+        "morse": "– – ·",
+        "next_lesson": "8"
     },
     "8": {
         "id": "8",
@@ -89,22 +93,26 @@ alphabet = {
     "10": {
         "id": "10",
         "letter": "J",
-        "morse": "· – – –"
+        "morse": "· – – –",
+        "next_lesson": "14"
     },
     "11": {
         "id": "11",
         "letter": "K",
-        "morse": "– · – ·"
+        "morse": "– · – ·",
+        "next_lesson": "14"
     },
     "12": {
         "id": "12",
         "letter": "L",
-        "morse": "· – · ·"
+        "morse": "· – · ·",
+        "next_lesson": "14"
     },
     "13": {
         "id": "13",
         "letter": "M",
-        "morse": "– –"
+        "morse": "– –",
+        "next_lesson": "14"
     },
     "14": {
         "id": "14",
@@ -133,12 +141,14 @@ alphabet = {
     "16": {
         "id": "16",
         "letter": "P",
-        "morse": "· – – ·"
+        "morse": "· – – ·",
+        "next_lesson": "18"
     },
     "17": {
         "id": "17",
         "letter": "Q",
-        "morse": "– – · –"
+        "morse": "– – · –",
+        "next_lesson": "18"
     },
     "18": {
         "id": "18",
@@ -174,37 +184,43 @@ alphabet = {
         "morse2": "–  ·–  ·– –·",
         "word3": "DATE",
         "morse3": "–··  ·–  –  ·",
-        "next_lesson": "end"
+        "next_lesson": "1"
     },
     "21": {
         "id": "21",
         "letter": "U",
-        "morse": "· · –"
+        "morse": "· · –",
+        "next_lesson": "1"
     },
     "22": {
         "id": "22",
         "letter": "V",
-        "morse": "· · · –"
+        "morse": "· · · –",
+        "next_lesson": "1"
     },
     "23": {
         "id": "23",
         "letter": "W",
-        "morse": "· – –"
+        "morse": "· – –",
+        "next_lesson": "1"
     },
     "24": {
         "id": "24",
         "letter": "X",
-        "morse": "– · · –"
+        "morse": "– · · –",
+        "next_lesson": "1"
     },
     "25": {
         "id": "25",
         "letter": "Y",
-        "morse": "– · – –"
+        "morse": "– · – –",
+        "next_lesson": "1"
     },
     "26": {
         "id": "26",
         "letter": "Z",
-        "morse": "– – · ·"
+        "morse": "– – · ·",
+        "next_lesson": "1"
     }
 }
 
@@ -373,6 +389,10 @@ def check_answer():
         correct = 1
     score += correct
     return jsonify(correct=correct)
+
+@app.route('/not_implemented')
+def not_implemented():
+    return render_template('not_implemented.html')  
 
 
 if __name__ == '__main__':
