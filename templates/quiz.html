@@ -32,7 +32,12 @@
         });
 
     }
-
+    function play()
+        {
+            
+            let audio = new Audio('../static/audio/' + question.audio_src);
+            audio.play();
+        }
     $(document).ready(function () {
         // Add correct instruction depending on type of question
         instructions = document.getElementById("instructions")
@@ -53,13 +58,13 @@
         */
         if (question.question_type == "morse_english") {
             instructions.append("Please listen to the following word in morse and type in the correct english translation")
-            let play = $('<img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30">')
+            let play = $('<img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30" onclick=play()>')
                 $("#variable").prepend(play)
             $("#Audio").prepend("Audio: {{question.transcription}}")
         }
         if (question.question_type == "sound_morse") {
             instructions.append("Please listen to the following morse code and type in the correct morse translation. The morse may be of letters you have not learned yet. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
-            let play = $('<img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30">')
+            let play = $('<img src="https://www.pinclipart.com/picdir/middle/68-680890_audio-play-blue-button-clipart.png" width="40" height="30" onclick=play()>')
                 $("#variable").prepend(play)
         }
         if (question.question_type == "english_morse") {
@@ -78,9 +83,9 @@
             else{
                 location.href = "/quiz/{{question.prev_question}}";
             }
-            
-
         };
+
+        
     })
 </script>
 
