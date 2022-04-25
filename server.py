@@ -228,71 +228,85 @@ nums = {
     "1": {
         "id": "1",
         "char": "1",
+        "audio": "1.wav",
         "morse": "· – – – –"
     },
     "2": {
         "id": "2",
         "char": "2",
+        "audio": "2.wav",
         "morse": "· · – – –"
     },
     "3": {
         "id": "3",
         "char": "3",
+        "audio": "3.wav",
         "morse": "· · · – –"
     },
     "4": {
         "id": "4",
         "char": "4",
+        "audio": "4.wav",
         "morse": "· · · · –"
     },
     "5": {
         "id": "5",
         "char": "5",
+        "audio": "5.wav",
         "morse": "· · · · ·"
     },
     "6": {
         "id": "6",
         "char": "6",
+        "audio": "6.wav",
         "morse": "– · · · ·"
     },
     "7": {
         "id": "7",
         "char": "7",
+        "audio": "7.wav",
         "morse": "– – · · ·"
     },
     "8": {
         "id": "8",
         "char": "8",
+        "audio": "8.wav",
         "morse": "– – – · ·"
     },
     "9": {
         "id": "9",
         "char": "9",
+        "audio": "9.wav",
         "morse": "– – – – ·"
     },
     "10": {
         "id": "10",
         "char": "0",
+        "audio": "0.wav",
         "morse": "– – – – –"
     },
     "11": {
         "id": "11",
         "char": ".",
+        "audio": "..wav",
         "morse": "· – · – · –"
     },
     "12": {
         "id": "12",
         "char": ",",
+        "audio": ",.wav",
         "morse": "– - · · – –"
     },
     "13": {
         "id": "13",
         "char": "?",
+        "audio": "question_mark.wav",
         "morse": "· · – – · ·"
     },
     "14": {
         "id": "14",
         "char": "/",
+        "audio": "back_slash.wav",
         "morse": "– · · – ·"
     }
 }
