@@ -354,7 +354,7 @@ quiz_questions = {
     "prev_question": "2",
     "question_type" : "english_morse",
     "word" : "DONE",
-    "answer" : "--. .. -.",
+    "answer" : "-.. --- -. .",
     "answered" : False,
     },
     "4" : {"difficulty" : "Easy",
