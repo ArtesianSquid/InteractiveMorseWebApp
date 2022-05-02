@@ -38,16 +38,41 @@ a, a:hover, a:focus, a:active {
 	font-size: 20px;
 	padding-top: 20px;
 }
-#next_button {
-	background-color: #00FF7F;
-	float: right;
+#but {
+	float:right;
 	margin-top: 30px;
+	background: rgb(116, 194, 116);
+	border: 1px solid rgb(116, 194, 116);
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+	font-size: 16px;
+	font-weight: 800;
+	line-height: 16px;
+	min-height: 40px;
+	outline: 0;
+	padding: 12px 14px;
+	text-align: center;
+	text-rendering: geometricprecision;
+	text-transform: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
 }
-#nums {
-	background-color: #00FF7F;
-	float: right;
-	margin-top: 30px;
+#but:hover,
+#but:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #666666;
 }
+#but:active {
+  opacity: .5;
+}
+
 #letters {
 	background-color: #00FF7F;
 	float: left;

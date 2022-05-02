@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#nums").click(function() {
+    $("#but").click(function() {
         window.location.href = "/learn/numbers"
     })
 })
