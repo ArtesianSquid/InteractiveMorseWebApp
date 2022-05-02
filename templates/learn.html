@@ -77,8 +77,11 @@
             {{data.morse3}}
         </div>
     </div>
-    
-    <button id="but">Next Easy Letter</button>
+    {% if data.next_lesson!="1" %}
+        <button id="but">Next Easy Letter</button>
+    {% else %}
+        <button id="but">Start Quiz</button>
+    {% endif %}
 
 </div>
 

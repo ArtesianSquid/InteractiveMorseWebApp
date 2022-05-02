@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#but").click(function() {
-        if (data["next_lesson"] == "end") {
+        if (data["next_lesson"] == "1") {
             window.location.href = "/quiz/0"
         }
         else {
