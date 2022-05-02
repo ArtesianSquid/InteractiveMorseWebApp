@@ -408,9 +408,12 @@ def quiz(id=None):
 @app.route('/quiz/end')
 def end():
     global score
+    global quiz_questions
     # reset score to 0 when you reach end page
     final_score = score
     score = 0
+    for q in quiz_questions:
+        q["answered"] = False
     return render_template('end.html', score=final_score) 
 
 @app.route('/quiz_home')
@@ -434,7 +437,7 @@ def check_answer():
     ans = json_data["answer"]
     qid = json_data["question_id"]
     correct = 0
-    if(ans == quiz_questions[str(qid)]["answer"]):
+    if(ans.lower() == quiz_questions[str(qid)]["answer"].lower()):
         correct = 1
     score += correct
     quiz_questions[str(qid)]["answered"] = True
