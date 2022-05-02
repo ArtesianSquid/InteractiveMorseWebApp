@@ -7,17 +7,14 @@
     <h1>Quiz</h1>   
 </div>
 
-<div id="difficulty_select"></div>
-    <label for="difficulty">Select a Difficulty from the drop-down below</label>
-    <select name="difficulty" id="difficulty" onchange="location = this.value">
-        <option disabled selected value> -- select an option -- </option>
-        <!–– probably shouldn't hardcode the quiz values in case we want to change them up later––>
-        <option value="quiz/0">Easy</option>
-        <option value="not_implemented">Medium</option>
-        <option value="not_implemented">Hard</option>
-    </select>
+<div class="dropdown">
+    <button class="dropbtn">Select a Difficulty</button>
+    <div class="dropdown-content">
+      <a href="quiz/0">Easy</a>
+      <a href="not_implemented">Medium</a>
+      <a href="not_implemented">Hard</a>
+    </div>
 </div>
-
 
 
 {% endblock %}
