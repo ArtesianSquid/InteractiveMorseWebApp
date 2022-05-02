@@ -412,8 +412,8 @@ def end():
     # reset score to 0 when you reach end page
     final_score = score
     score = 0
-    for q in quiz_questions:
-        q["answered"] = False
+    for i in range(len(quiz_questions)):
+        quiz_questions[str(i)]["answered"] = False
     return render_template('end.html', score=final_score) 
 
 @app.route('/quiz_home')

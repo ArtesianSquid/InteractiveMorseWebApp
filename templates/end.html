@@ -7,28 +7,35 @@
 
 <script>
     let score = {{ score| tojson}}
-    
-    $(document).ready(function () {    
+
+    $(document).ready(function () {
         $("#score").text(score + "/5")
-        $("#yes").click(function() {
+        $("#yes").click(function () {
             window.location.href = "/quiz_home"
-        }) 
-        $("#no").click(function() {
+        })
+        $("#no").click(function () {
             window.location.href = "/"
-        }) 
+        })
     });
 
 </script>
 
-<div id="end_container">
-    <h1>Quiz</h1>
-    <h2>Level: Easy</h2>
+<div id="end-container">
+    <h1 class="txtheader">Quiz</h1>
+    <h2 class="txtheader">Level: Easy</h2>
     <br>
-    <div>You have finished the Quiz and recieved the following score: </div>
-    <h1 id="score"> </h1>
-    <div>Would you like to try again?</div>
-    <button class="quiz-btn" id="yes">Yes</button>
-    <button class="quiz-btn" id="no">No</button>
+    <div class="txtheader">You have finished the Quiz and recieved the following score: </div>
+    <h1 class="txtheader" id="score"> </h1>
+    <br>
+    <div class="txtheader">
+        Would you like to try again?
+        <br>
+        <span class="txtheader">
+            <button class="dropbtn" id="yes">Yes</button>
+            <button class="dropbtn" id="no">No</button>
+        </span>
+    </div>
+
 </div>
 
 
