@@ -322,6 +322,7 @@ quiz_questions = {
     "question_type" : "morse_english",
     "word" : "TAN",
     "answer" : "TAN",
+    "answered" : False,
     },
     "1" : {"difficulty" : "Easy",
     "number": "2",
@@ -332,6 +333,7 @@ quiz_questions = {
     "question_type" : "morse_english",
     "word" : "HID",
     "answer" : "HID",
+    "answered" : False,
     },
     "2" : {"difficulty" : "Easy",
     "number": "3",
@@ -341,7 +343,8 @@ quiz_questions = {
     "prev_question": "1",
     "question_type" : "sound_morse",
     "word" : "END",
-    "answer" : "·  –·  –··"
+    "answer" : "·  –·  –··",
+    "answered" : False,
     },
     "3" : {"difficulty" : "Easy",
     "number": "4",
@@ -351,7 +354,8 @@ quiz_questions = {
     "prev_question": "2",
     "question_type" : "english_morse",
     "word" : "DONE",
-    "answer" : "--. .. -."
+    "answer" : "--. .. -.",
+    "answered" : False,
     },
     "4" : {"difficulty" : "Easy",
     "number": "5",
@@ -361,7 +365,8 @@ quiz_questions = {
     "prev_question": "3",
     "question_type" : "english_morse",
     "word" : "DASH",
-    "answer" : "-.. .- ... ...."
+    "answer" : "-.. .- ... ....",
+    "answered" : False,
     }
 }
 
@@ -402,7 +407,11 @@ def quiz(id=None):
 
 @app.route('/quiz/end')
 def end():
-    return render_template('end.html', score=score) 
+    global score
+    # reset score to 0 when you reach end page
+    final_score = score
+    score = 0
+    return render_template('end.html', score=final_score) 
 
 @app.route('/quiz_home')
 def quiz_home():
@@ -420,6 +429,7 @@ def save_score():
 @app.route('/quiz/check_answer', methods=['GET', 'POST'])
 def check_answer():
     global score
+    global quiz_questions
     json_data = request.get_json()
     ans = json_data["answer"]
     qid = json_data["question_id"]
@@ -427,6 +437,7 @@ def check_answer():
     if(ans == quiz_questions[str(qid)]["answer"]):
         correct = 1
     score += correct
+    quiz_questions[str(qid)]["answered"] = True
     return jsonify(correct=correct)
 
 @app.route('/not_implemented')

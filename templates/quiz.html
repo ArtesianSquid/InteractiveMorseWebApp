@@ -22,6 +22,7 @@
                     $("#message").text("CORRECT! Fantastic job");
                 else
                     $("#message").text("Incorrect...the right answer is " + question.answer);
+                question.answered = true;
             },
             error: function (request, status, error) {
                 console.log("Error");
@@ -42,6 +43,10 @@
         // Add correct instruction depending on type of question
         instructions = document.getElementById("instructions")
         variable = document.getElementById("variable")
+        if(question.answered) {
+            $("#submit").prop("disabled", true);
+        }
+        console.log(question.answered)
         /* Switch doesnt work for some reason
         switch({{question.question_type}}){
             case "0": 
