@@ -4,27 +4,22 @@
 
 
 <script>
-    let data = {{data| tojson}} 
+    let data = {{ data| tojson}} 
 </script>
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
 
 
 <div class="container">
-    <div class="row letterHeader">
-        <div class="col-md-12">
-            {{data.letter}}
-        </div>
-    </div>
-    <div class="row letterHeader">
-        <div class="col-md-12">
-            {{data.morse}}
-        </div>
+    <div class="letterHeader">
+        {{data.letter}}
+        <br>
+        {{data.morse}}
     </div>
     <div class="row">
         <div class="col-md-1 audio">
             <button class="button-solid" id="play" onclick="play()">
-                <img id = "playButton">
+                <img id="playButton">
             </button>
         </div>
         <div class="col-md-5 wordPad">
@@ -52,7 +47,7 @@
     <div class="row">
         <div class="col-md-1 audio">
             <button class="button-solid" id="play2" onclick="play2()">
-                <img id = "playButton">
+                <img id="playButton">
             </button>
         </div>
         <div class="col-md-5 wordPad">
@@ -66,7 +61,7 @@
     <div class="row">
         <div class="col-md-1 audio">
             <button class="button-solid" id="play3" onclick="play3()">
-                <img id = "playButton">
+                <img id="playButton">
             </button>
         </div>
         <div class="col-md-5 wordPad">
@@ -78,9 +73,9 @@
         </div>
     </div>
     {% if data.next_lesson!="1" %}
-        <button id="but">Next Easy Letter</button>
+    <button id="but">Next Easy Letter</button>
     {% else %}
-        <button id="but">Start Quiz</button>
+    <button id="but">Start Quiz</button>
     {% endif %}
 
 </div>
