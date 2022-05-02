@@ -108,7 +108,7 @@ button-solid:focus {
 	margin-left: -20px;
 }
 body{
-	background-color: #dcecd0;
+	background-color: rgb(233, 221, 201);
 }
 #playButton{
 	width: 30px;
