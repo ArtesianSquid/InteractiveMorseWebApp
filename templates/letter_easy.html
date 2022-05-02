@@ -80,15 +80,14 @@
         <div class="col-md-2"></div>
     </div>
     <br>
-    <div id="learningDropDown">
-        <label for="difficulty">Select a Filter from the drop-down</label>
-        <select name="difficulty" id="difficulty" onchange="location = this.value">
-            <option disabled selected value> -- select an option -- </option>
-            <option value="learn">All Letters</option>
-            <option value="learn_easy">Easy Letters</option>
-            <option value="not_implemented">Medium Letters</option>
-            <option value="not_implemented">Hard Letters</option>
-        </select>
+    <div class="dropdown">
+        <button class="dropbtn">Select a Filter</button>
+        <div class="dropdown-content">
+          <a href="learn">All Letters</a>
+          <a href="learn_easy">Easy Letters</a>
+          <a href="not_implemented">Medium Letters</a>
+          <a href="not_implemented">Hard Letters</a>
+        </div>
     </div>
 </div>
 
