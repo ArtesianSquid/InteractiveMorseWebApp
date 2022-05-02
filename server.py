@@ -403,7 +403,8 @@ def learn(id=None):
 @app.route('/quiz/<id>')
 def quiz(id=None):
     question = quiz_questions[id]
-    return render_template('quiz.html', question=question) 
+    global score
+    return render_template('quiz.html', question=question, score=score) 
 
 @app.route('/quiz/end')
 def end():
