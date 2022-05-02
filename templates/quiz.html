@@ -47,25 +47,13 @@
             $("#submit").prop("disabled", true);
         }
         console.log(question.answered)
-        /* Switch doesnt work for some reason
-        switch({{question.question_type}}){
-            case "0": 
-                instructions.append("Please listen to the following word in morse and type in the correct english translation");
-                break;
-            case "1": 
-                instructions.append("1")
-                break;
-            case "2": 
-                instructions.append("2")
-                break;  
-            break;
-        }
-        */
+        
         if (question.question_type == "morse_english") {
             instructions.append("Please listen to the following word in morse and type in the correct english translation")
-            let play = $('<img src="https://icon-library.com/images/play-icon-png-transparent/play-icon-png-transparent-21.jpg" width="30" height="30" onclick=play()>')
+            let play = $('<img src="https://icon-library.com/images/play-icon-png-transparent/play-icon-png-transparent-21.jpg" width="30" height="30" onclick=play() text="Test">')
                 $("#variable").prepend(play)
-            $("#Audio").prepend("Audio: {{question.transcription}}")
+            variable.setAttribute("text", "teseter")
+            //$("#Audio").prepend("Audio: {{question.transcription}}")
         }
         if (question.question_type == "sound_morse") {
             instructions.append("Please listen to the following morse code and type in the correct morse translation. The morse may be of letters you have not learned yet. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
@@ -96,21 +84,20 @@
 
 <div id="quiz_title">
     <h1>Quiz</h1>
-    Level: {{question.difficulty}}
-    <br>
+    <h2>Level: {{question.difficulty}}</h2>
     Question {{question.number}} of 5
 </div>
 
 <br>
-<div id="instructions">Instructions: </div>
+<div id="instructions"></div>
 
 <br>
 <div id="Audio"></div>
 
-<div>
-    <span id="variable"></span>
-    <input id="answer" placeholder="Enter Your Answer Here" aria-label="Search" name="search">
-    <button id="submit" onclick="checkAnswer()">Submit</button>
+<div id="quiz_answer_box">
+    <span id="variable" class="play_btn" ></span>
+    <input id="answer" placeholder="Enter Your Answer Here" aria-label="Search" name="search" class="quiz_answer_box">
+    <button id="submit" class="quizsubmitbtn" onclick="checkAnswer()">Submit</button>
 </div>
 <br>
 <div id="message"></div>

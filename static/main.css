@@ -134,6 +134,39 @@ body{
     background-color: rgb(116, 194, 116);
 }
 
+#quiz_title{
+	margin: auto;
+  	width: 50%;
+	text-align: center;  
+}
+
+#quiz_answer_box{
+	margin: auto;
+  	width: 50%;
+	text-align: center;  
+}
+
+.quizsubmitbtn{
+	background-color: rgb(116, 194, 116);
+	border-radius: 6px;
+	color: white;
+	padding: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 12px;
+	border: none;
+	cursor: pointer;
+	margin: 10px;
+}
+
+.play_btn{
+	margin: 10px;
+}
+
+.quiz_answer_box{
+	margin: 10px;
+}
+
 .dropbtn {
 	background-color: rgb(116, 194, 116);
 	border-radius: 6px;
