@@ -164,6 +164,20 @@ body{
 	margin: 10px;
 }
 
+.error{
+	color:red
+}
+
+.correct{
+	color: green
+}
+
+.center{
+	margin: auto;
+	width: 50%;
+  	text-align: center; 	
+}
+
 .dropbtn {
 	background-color: rgb(116, 194, 116);
 	border-radius: 6px;

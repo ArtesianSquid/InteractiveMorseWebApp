@@ -18,10 +18,14 @@
             success: function (result) {
                 console.log(result);
                 $("#submit").prop("disabled", true);
-                if(result["correct"])
+                if(result["correct"]){
                     $("#message").text("CORRECT! Fantastic job");
-                else
+                    $("#message").addClass("correct");
+                }
+                else{
                     $("#message").text("Incorrect...the right answer is " + question.answer);
+                    $("#message").addClass("error");
+                }
                 question.answered = true;
             },
             error: function (request, status, error) {
@@ -100,7 +104,7 @@
     <button id="submit" class="quizsubmitbtn" onclick="checkAnswer()">Submit</button>
 </div>
 <br>
-<div id="message"></div>
+<div id="message" class="center"></div>
 <br>
 <div class = "row">
     <div class="col-md-3">
@@ -108,7 +112,7 @@
     </div>
     <div class="col-md-6"></div>
     <div>
-        <button id="Next" class="dropbtn"">Next Question</button><br>
+        <button id="Next" class="dropbtn">Next Question</button><br>
     </div>
 </div>
 
