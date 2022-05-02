@@ -7,6 +7,7 @@ $(document).ready(function() {
             window.location.href = "/learn/" + data["next_lesson"]
         }
     })
+    $("img").attr("src", "https://icon-library.com/images/play-icon-png-transparent/play-icon-png-transparent-21.jpg");
 })
 function play()
 {

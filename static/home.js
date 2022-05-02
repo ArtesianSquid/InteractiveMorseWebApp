@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    $("img").attr("src", "https://icon-library.com/images/play-icon-png-transparent/play-icon-png-transparent-21.jpg");
+});
 function displayItems(data){
     //insert name data
     $.each(data, function(i, datum){

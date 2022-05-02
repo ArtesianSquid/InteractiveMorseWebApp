@@ -66,6 +66,7 @@ a, a:hover, a:focus, a:active {
 }
 .button-solid {
     border: none;
+	background-color: transparent;
 }
 button-solid:focus {
     border: none;
@@ -84,4 +85,27 @@ button-solid:focus {
 .numMorse {
 	padding-top: 7px;
 	margin-left: -20px;
+}
+body{
+	background-color: #dcecd0;
+}
+#playButton{
+	width: 30px;
+	height: 30px;
+}
+#nav-head{
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+}
+#nav-option{
+	font-size: 15px;
+	color: white;
+}
+#nav-option:hover{
+	color: gray;
+	font-weight: bold;
+}
+.navbar-custom {
+    background-color: rgb(116, 194, 116);
 }
