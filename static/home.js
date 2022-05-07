@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("img").attr("src", "https://icon-library.com/images/play-icon-png-transparent/play-icon-png-transparent-21.jpg");
+    $("#machine").attr("src", "https://www.maketecheasier.com/assets/uploads/2021/12/morse-code-machine.jpeg")
 });
 function displayItems(data){
     //insert name data
