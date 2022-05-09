@@ -65,7 +65,7 @@
                 $("#variable").prepend(play)
         }
         if (question.question_type == "english_morse") {
-            instructions.append("Please consider the following English word and type in the correct morse translation. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
+            instructions.append("Please consider the following English word(s) and type in the correct morse translation. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter. Place a forward slash surrounded by a space on each side between words.")
             variable.append("{{question.word}}")
         }
 
