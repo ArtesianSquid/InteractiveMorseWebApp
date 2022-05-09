@@ -14,7 +14,7 @@
             url: "check_answer",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({"answer" : $("#answer").val(), "question_id" : question.number-1}),
+            data: JSON.stringify({"answer" : $("#answer").val(), "question_id" : question.id}),
             success: function (result) {
                 console.log(result);
                 $("#submit").prop("disabled", true);
@@ -43,6 +43,7 @@
             let audio = new Audio('../static/audio/' + question.audio_src);
             audio.play();
         }
+
     $(document).ready(function () {
         // Add correct instruction depending on type of question
         instructions = document.getElementById("instructions")
@@ -56,8 +57,6 @@
             instructions.append("Please listen to the following word in morse and type in the correct english translation")
             let play = $('<img src="https://icon-library.com/images/play-icon-png-transparent/play-icon-png-transparent-21.jpg" width="30" height="30" onclick=play() text="Test">')
                 $("#variable").prepend(play)
-            variable.setAttribute("text", "teseter")
-            //$("#Audio").prepend("Audio: {{question.transcription}}")
         }
         if (question.question_type == "sound_morse") {
             instructions.append("Please listen to the following morse code and type in the correct morse translation. The morse may be of letters you have not learned yet. Please use periods and dashes with no spaces between them for individual letters. Place one space between each letter")
