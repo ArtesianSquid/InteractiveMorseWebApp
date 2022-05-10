@@ -611,6 +611,11 @@ def easyLetters():
     global alphabet
     return render_template('letter_easy.html', data=alphabet)
 
+@app.route('/learn_medium')
+def medLetters():
+    global alphabet
+    return render_template('letter_medium.html', data=alphabet)
+
 @app.route('/learn/numbers')
 def numbers():
     # alpahbet will be replaced by the dictionary for nums later
